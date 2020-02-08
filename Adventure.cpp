@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <chrono>
+#include <thread>
 
 using namespace std;
 
@@ -76,6 +78,8 @@ int main()
             cout << "Please, " << defender << ", you must rest soon!\n";
         }
 
+        this_thread::sleep_for(chrono::milliseconds(2000));
+
         continue;
     }
     if (health <= 0) 
@@ -86,4 +90,5 @@ int main()
     {
         cout << defender << ", you have held out long enough for help to arrive.\nYour victory will be praised as long as your home stands!\n";    
     }
+    return 0;
 }
